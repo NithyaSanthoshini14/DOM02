@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Login Form</h2>
+    <form>
+    Email<input type="email" name="mail" id="d1"><br> 
+    password:<input type="password" name="pass" id="d2"><br>
+    <button>submit</button>
+    </form>
+    <br>
+    <br>
+   <script>
+        var user_email=document.getElementsByName("mail")[0]
+        console.log(user_email)
+        let user_pass=document.getElementsByName("pass")[0]
+        console.log(user_pass)
+        var btn=document.getElementsByTagName("button")[0]
+        console.log(btn)
+        btn.addEventListener("click",(e)=>{
+            e.preventDefault()
+    
+            // console.log(user_email.value);
+            // console.log(user_pass.value);
+
+            let obj={}
+            obj.user_email=user_email.value
+            obj.user_pass=user_pass.value
+            obj.city="warangal"
+            console.log(obj)
+
+            // for(i in obj){
+            let para=document.createElement("p")
+            document.body.appendChild(para)
+            var p_ele=document.getElementsByTagName("p")[0];
+            p_ele.innerText=`your email is ${user_email.value}`
+            let p2=document.createElement("p")
+            document.body.appendChild(p2)
+            var p2_ele=document.getElementsByTagName("p")[1]
+            p2_ele.innerText=`your password is ${user_pass.value}`
+            user_email.value=" ";
+            user_pass.value=" ";
+        })
+         </script>  
+</body>
+</html>
